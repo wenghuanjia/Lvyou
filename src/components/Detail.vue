@@ -9,7 +9,7 @@
       </ul>
     </nav>
     <div class="fixed">
-      <img :src="items.imgUrl" class="img">
+      <img :src="items.imgUrl" preview="1" :preview-text="items.title" class="img">
       <div class="txt">
         <div class="title">{{ items.title }}</div>
         <div class="desc">{{ items.desc }}</div>

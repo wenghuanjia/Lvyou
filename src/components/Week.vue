@@ -8,9 +8,12 @@
         <li class="desc">{{ title }}</li>
       </ul>
     </nav>
+    <!-- <img src="http://b3-q.mafengwo.net/s7/M00/E0/48/wKgB6lRtnhCAOkAiAAyLalBGXD051.jpeg?imageView2%2F2%2Fw%2F2000%2Fh%2F600%2Fq%2F90" preview="1" preview-text="文本" alt=""> -->
     <div class="fixed">
       <div v-for="(item, index) in items" :key="index">
-        <img :src="item.imgUrl" class="img" alt="">
+        <div>
+          <img preview="repairDetail" :preview-text="title" :src="item.imgUrl" class="img">
+        </div>
         <p class="city" v-if="item.city">{{ index+1 }}、{{ item.city }}</p>
         <p class="content" v-if="item.content" v-html="item.content"></p>
         <p class="spot" v-if="item.spot">{{ item.spot }}</p>
@@ -106,16 +109,12 @@ nav.top {
   }
   .why ,
   .introduce ,
-  .tip {
-    font-size: rem(30px);
-    padding: rem(8px) rem(10px);
-    color: red;
-  }
+  .tip ,
   .city ,
   .spot ,
   .price {
     font-weight: 700;
-    font-size: rem(24px);
+    font-size: rem(30px);
     padding: rem(8px) rem(10px);
     color: red;
   }

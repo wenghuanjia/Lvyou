@@ -15,6 +15,14 @@ Vue.use(VueLazyload, {
   loading: require('../static/images/txLoading.gif'),
   attempt: 1
 })
+// 引入图片放大组件
+import preview from 'vue-photo-preview'
+import 'vue-photo-preview/dist/skin.css'
+Vue.use(preview)
+var options = {
+  fullscreenEl: false //关闭全屏按钮
+};
+Vue.use(vuePhotoPreview,options)
 
 import { Swipe, SwipeItem, Popup } from 'mint-ui';
 Vue.component(Popup.name, Popup);
