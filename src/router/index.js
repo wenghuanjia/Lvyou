@@ -5,6 +5,7 @@ import Map from '@/components/Map'
 import Travel from '@/components/Travel'
 import Weather from '@/components/Weather'
 import Detail from '@/components/Detail'
+import Week from '@/components/Week'
 // 导入 map 下的二级路由
 import Hot from '@/components/topics/Hot'
 import Mobile from '@/components/topics/Mobile'
@@ -19,18 +20,10 @@ Vue.use(Router)
 export default new Router({
   routes: [{
       path: '/travel',
-      // name: 'Travel',
-      component: Travel,
-      children: [
-        /* {
-          path: 'detail',
-          component: Detail
-        } */
-      ]
+      component: Travel
     },
     {
       path: '/weather',
-      name: 'Weather',
       component: Weather,
       children: [{
         path: '/city',
@@ -39,7 +32,6 @@ export default new Router({
     },
     {
       path: '/map',
-      name: 'Map',
       component: Map,
       children: [{
           path: '/',
@@ -70,6 +62,10 @@ export default new Router({
     {
       path: '/detail/:id',
       component: Detail
+    },
+    {
+      path: '/week/:id',
+      component: Week
     },
     {
       path: '/*',

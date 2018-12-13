@@ -121,11 +121,11 @@
     </ul>
     <div class="gos">
       <div class="go">周末去哪儿</div>
-      <div class="weeks" v-for="(week,index) in weeks" :key="index">
+      <router-link tag="div" :to="'/week/'+week.id" class="weeks" v-for="(week,index) in weeks" :key="index">
         <img :src="week.imgUrl" alt class="goImg">
         <p class="title">{{ week.title }}</p>
         <p class="desc">{{ week.desc }}</p>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

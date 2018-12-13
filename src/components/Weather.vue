@@ -127,7 +127,6 @@ export default {
     },
     none: function() {
       document.getElementById("myform").style.cssText = "display:none";
-      // document.getElementsByClassName('items')[0].style.cssText = 'display:block';
     }
   }
 };
@@ -205,7 +204,7 @@ export default {
     }
     .live {
       color: #fff;
-      font-size: rem(18px);
+      font-size: rem(22px);
       .life {
         border: rem(2px) dashed #fff;
         border-radius: rem(10px);
@@ -228,16 +227,6 @@ export default {
       }
     }
   }
-}
-.v-enter,
-.v-leave-to {
-  opacity: 0;
-  transform: translateX(150px);
-}
-
-.v-enter-active,
-.v-leave-active {
-  transition: all 0.8s ease;
 }
 #myform input {
   width: 100%;

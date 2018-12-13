@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// 引入 公共部分的样式
+// 引入 公共 样式
 @import './assets/sass/base.scss';
 // 样式
 nav.myfooter {
