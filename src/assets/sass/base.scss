@@ -1,0 +1,27 @@
+// 公共样式
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+// px 转换 rem
+@function rem($px) {
+  @return $px / 75px * 1rem;
+}
