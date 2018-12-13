@@ -1,19 +1,5 @@
 # travel
 
-> A Vue.js project
-
-## 字体图标
-
-```shell
-//at.alicdn.com/t/font_939659_m28ulmu6yzm.css
-```
-
-## API接口
-
-```shell
-http://api.tianapi.com/travel/?key=?2&num=?
-```
-
 ## Build Setup
 
 ``` bash
