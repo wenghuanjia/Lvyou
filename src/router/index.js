@@ -6,6 +6,7 @@ import Travel from '@/components/Travel'
 import Weather from '@/components/Weather'
 import Detail from '@/components/Detail'
 import Week from '@/components/Week'
+import Nav from '@/components/Nav'
 // 导入 map 下的二级路由
 import Hot from '@/components/topics/Hot'
 import Mobile from '@/components/topics/Mobile'
@@ -66,6 +67,10 @@ export default new Router({
     {
       path: '/week/:id',
       component: Week
+    },
+    {
+      path: '/nav/:id',
+      component: Nav
     },
     {
       path: '/*',

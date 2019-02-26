@@ -8,7 +8,6 @@
         <li class="desc">{{ title }}</li>
       </ul>
     </nav>
-    <!-- <img src="http://b3-q.mafengwo.net/s7/M00/E0/48/wKgB6lRtnhCAOkAiAAyLalBGXD051.jpeg?imageView2%2F2%2Fw%2F2000%2Fh%2F600%2Fq%2F90" preview="1" preview-text="文本" alt=""> -->
     <div class="fixed">
       <div v-for="(item, index) in items" :key="index">
         <div>

@@ -25,3 +25,8 @@ input {
 @function rem($px) {
   @return $px / 75px * 1rem;
 }
+.ell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,5 +1,6 @@
 <template>
   <div class="travel">
+    
     <router-view></router-view>
     <!-- loading 组件 -->
     <loading v-if="!items.length"></loading>
@@ -10,8 +11,20 @@
       </mt-swipe-item>
     </mt-swipe>
     <!-- 轮播图 end -->
+    <keep-alive>
+      <div>
+        <ul class="travel-nav">
+          <router-link tag="li" :to="'/nav/'+item.id" class="nav-item" v-for="item in navmsg" :key="item.id">
+            <a href="">
+              <img :src="item.icon" alt="">
+              <span>{{ item.name }}</span>
+            </a>
+          </router-link>
+        </ul>
+      </div>
+    </keep-alive>
     <!-- list start -->
-    <div class="list">
+    <!-- <div class="list">
       <ul class="list_top">
         <li>
           <a href>
@@ -106,7 +119,7 @@
           </a>
         </li>
       </ul>
-    </div>
+    </div> -->
     <!-- list end -->
     <ul class="datas">
       <li class="description">热门推荐</li>
@@ -126,7 +139,7 @@
         <p class="title">{{ week.title }}</p>
         <p class="desc">{{ week.desc }}</p>
       </router-link>
-    </div>
+    </div>    
   </div>
 </template>
 
@@ -142,24 +155,21 @@ export default {
     return {
       items: [],
       recommends: [],
-      weeks: []
+      weeks: [],
+      navmsg: []
     };
   },
   mounted() {
-    console.log(getAa);
     var response = getAa;
-    // axios.get("/static/mock/index.json").then(response => {
-      this.items = response.data.swiperList;
-    // });
-    // axios.get("/static/mock/index.json").then(response => {
-      this.recommends = response.data.recommendList;
-    // });
-    // axios.get("/static/mock/index.json").then(response => {
-      this.weeks = response.data.weekendList;
-    // });
+    this.items = response.data.swiperList;
+    this.recommends = response.data.recommendList;
+    this.weeks = response.data.weekendList;
     if (this.$route.path.indexOf("detail")) {
       document.getElementById("footer").style.display = "block";
     }
+    axios.get('https://locally.uieee.com/categories').then(res => {
+      this.navmsg = res.data
+    })
   },
   components: {
     // loading 组件
@@ -175,6 +185,30 @@ export default {
 .travel {
   width: 100%;
   margin-bottom: rem(100px);
+  .travel-nav {
+    display: flex;
+    flex-wrap: wrap;
+    .nav-item {
+      width: 20%;
+      .icon-size {
+        font-size: rem(60px);
+      }
+      a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: #333;
+        img {
+          width: rem(60px);
+          height: rem(60px);
+        }
+        span {
+          padding-top: 0.2rem;
+          padding-bottom: 0.2rem;
+        }
+      }
+    }
+  }
   .items {
     width: 100%;
     margin-bottom: rem(20px);
@@ -269,7 +303,7 @@ export default {
 
   // datas
   .datas {
-    padding: rem(20px) rem(15px);
+    padding: 0 rem(15px) rem(20px) rem(15px);
     .description {
       font-size: rem(30px);
       padding: rem(10px) 0;
