@@ -5,12 +5,13 @@
   "author": "",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --open --host 192.168.1.101 --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --open --host 192.168.1.100 --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
     "mini-ui": "0.0.1-alpha",
+    "vant": "^1.6.12",
     "vue": "^2.5.2",
     "vue-photo-preview": "^1.1.2",
     "vue-router": "^3.0.1"

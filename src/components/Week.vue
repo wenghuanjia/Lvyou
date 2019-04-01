@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       items: [],
-      title:''
+      title: ""
     };
   },
   mounted() {
@@ -50,7 +50,7 @@ export default {
       if (response.data.springList[i].id == this.$route.params.id) {
         this.items = response.data.springList[i].item;
         this.title = response.data.springList[i].title;
-        console.log(response.data.springList[i].item)
+        console.log(response.data.springList[i].item);
       }
     }
     if (this.$route.path.indexOf("detail")) {
@@ -93,7 +93,7 @@ nav.top {
 }
 .fixed {
   padding: rem(30px) rem(16px);
-  padding-top: rem(100px);  
+  padding-top: rem(100px);
   font-size: rem(22px);
   p {
     font-size: rem(26px);
@@ -106,11 +106,11 @@ nav.top {
     height: rem(340px);
     border: rem(1px) solid #000;
   }
-  .why ,
-  .introduce ,
-  .tip ,
-  .city ,
-  .spot ,
+  .why,
+  .introduce,
+  .tip,
+  .city,
+  .spot,
   .price {
     font-weight: 700;
     font-size: rem(30px);
@@ -131,5 +131,4 @@ nav.top {
     text-indent: rem(40px);
   }
 }
-
 </style>

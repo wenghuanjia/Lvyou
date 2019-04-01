@@ -14,8 +14,6 @@ import Entertainment from '@/components/topics/Entertainment'
 import Military from '@/components/topics/Military'
 import Society from '@/components/topics/Society'
 import Sport from '@/components/topics/Sport'
-// 导入 weather 下的二级路由
-import City from '@/components/weather/City'
 Vue.use(Router)
 
 export default new Router({
@@ -25,11 +23,7 @@ export default new Router({
     },
     {
       path: '/weather',
-      component: Weather,
-      children: [{
-        path: '/city',
-        component: City
-      }]
+      component: Weather
     },
     {
       path: '/map',
@@ -75,6 +69,6 @@ export default new Router({
     {
       path: '/*',
       redirect: '/travel'
-    },
+    }
   ]
 })

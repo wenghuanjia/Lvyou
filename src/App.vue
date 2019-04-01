@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'App',
   // 计算属性
@@ -29,6 +30,14 @@ export default {
       var arr = this.$route.path.split('/')
       return arr[1]
     }
+  },
+  created(){
+    axios.get('http://hoa.hcoder.net/index.php?user=hcoder&pwd=hcoder&m=info&id=1').then(res => {
+      console.log(res.data.content)
+    })
+    axios.get('http://hoa.hcoder.net/index.php?user=hcoder&pwd=hcoder&m=mediaList&page=1').then(res => {
+      console.log(res)
+    })
   }
 }
 </script>
@@ -40,7 +49,7 @@ export default {
 nav.myfooter {
   position: fixed;
   z-index: 9999;
-  bottom: 0px;
+  bottom: -1px;
   left: 0;
   width: 100%;
   background: #FCFCFC;
